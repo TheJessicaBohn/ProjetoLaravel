@@ -6,3 +6,6 @@
 
 - Wamp server https://www.wampserver.com/en/, e VS Code https://code.visualstudio.com/ ;
 - Comandos :https://laravel.com/docs/7.x ;
+
+### Comandos Importantes:
+- php artisan serve   -> inicia o serviço
