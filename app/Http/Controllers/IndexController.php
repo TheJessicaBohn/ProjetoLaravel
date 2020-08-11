@@ -3,9 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Diretores;
+use App\Models\Filmes;
 
 class IndexController extends Controller
 {
+    private $objDiretores;
+    private $objFilmes;
+    public function __construct()
+    {
+        $this->objDiretores= new Diretores();
+        $this->objFilmes= new Filmes();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,12 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view ('index');
+       
+        $filme= $this->objFilmes->all();
+        return view ('index',compact('filme'));
+
+         //dd( $this->objDiretores->all());
+       // dd( $this->objDiretores->find(1)->relFilmes);
     }
 
     /**
