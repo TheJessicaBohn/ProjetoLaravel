@@ -26,8 +26,8 @@ class IndexController extends Controller
         $filme= $this->objFilmes->all();
         return view ('index',compact('filme'));
 
-         //dd( $this->objDiretores->all());
-       // dd( $this->objDiretores->find(1)->relFilmes);
+        //dd( $this->objDiretores->all());
+       //dd( $this->objDiretores->find(1)->relFilmes);
     }
 
     /**
@@ -59,7 +59,9 @@ class IndexController extends Controller
      */
     public function show($id)
     {
-        //
+        $filme=$this->objFilmes->find($id);
+        return view('filmes',compact('filme'));
+
     }
 
     /**

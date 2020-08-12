@@ -1,39 +1,20 @@
 @extends('templates.template')
 
 @section('content')
-<div class="content">
-<div class="title m-b-md">SoiticFlix</div>
-<div class="col-8 m-auto" >
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<h1 class="text-center">Visualizar</h1> <hr>
+<div class="col-20 m-auto">
+@php
+  $diretores= $filme->find($filme->id)->relDiretores;
+@endphp
 
+Id:{{$filme->id}} <br>
+Título:{{$filme->title}} <br>
+Diretor:{{$diretores->name}} <br>
+Duração:{{$filme->duracao}} <br>
+País:{{$filme->origem}} <br>
+Ano:{{$filme->ano}} <br>
+Criado em:{{$filme->created_at}} <br>
+Mudado em:{{$filme->updated_at}} <br>
+
+</div>
 @endsection

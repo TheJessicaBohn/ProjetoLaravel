@@ -17,17 +17,15 @@
       <th scope="col">Duração</th>
       <th scope="col">País</th>
       <th scope="col">Lançamento</th>
-      <th scope="col">Cadastro</th>
-      <th scope="col">Opções    </th>
+      <th scope="col">Opções</th>
 
     </tr>
   </thead>
   <tbody>
   @foreach($filme as $filmes)
   @php
-  $diretores= $filmes->find($filmes->id)->relDiretores
+  $diretores= $filmes->find($filmes->id)->relDiretores;
   @endphp
-
   <tr>
       <th scope="row"> {{$filmes->id}}</th>
       <td> {{$filmes->title}}</td>
@@ -35,9 +33,8 @@
       <td> {{$filmes->duracao}}</td>
       <td> {{$filmes->origem}}</td>
       <td> {{$filmes->ano}}</td>
-      <td> {{$filmes->created_at}}</td>
       <td>
-         <a href="">
+         <a href=" {{url("filmes/$filmes->id")}}">
             <button class="bnt btn-dark">Visualizar</button>
          </a>
          <a href="">
