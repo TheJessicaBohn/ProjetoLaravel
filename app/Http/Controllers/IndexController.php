@@ -37,7 +37,6 @@ class IndexController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -59,8 +58,7 @@ class IndexController extends Controller
      */
     public function show($id)
     {
-        $filme=$this->objFilmes->find($id);
-        return view('filmes',compact('filme'));
+       //
 
     }
 

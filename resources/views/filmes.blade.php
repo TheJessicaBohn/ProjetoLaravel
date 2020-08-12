@@ -1,8 +1,8 @@
 @extends('templates.template')
 
 @section('content')
-<h1 class="text-center">Visualizar</h1> <hr>
-<div class="col-20 m-auto">
+<h1 class="text-center">Visualizar Filmes</h1> <hr>
+<div class="col-4 m-auto">
 @php
   $diretores= $filme->find($filme->id)->relDiretores;
 @endphp

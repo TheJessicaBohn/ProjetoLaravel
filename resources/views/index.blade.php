@@ -4,9 +4,9 @@
 <div class="content">
 <div class="title m-b-md">SoiticFlix</div>
 <div class="text-center mt-3 mb-4" ></div>
-   <a href="">
+   <a href="{{url('filmes/create')}}">
       <button class="btn btn-success">Cadastrar</button>
-   </a>
+   </a> <hr>
 <div class="col-8 m-auto" >
 <table class="table text-center">
   <thead class="thead-dark">
@@ -35,8 +35,11 @@
       <td> {{$filmes->ano}}</td>
       <td>
          <a href=" {{url("filmes/$filmes->id")}}">
-            <button class="bnt btn-dark">Visualizar</button>
-         </a>
+            <button class="bnt btn-dark">Filme</button>
+         </a> 
+         <a href=" {{url("diretores/$diretores->id")}}">
+            <button class="bnt btn-dark">Diretor</button>
+         </a> <hr>
          <a href="">
             <button class="bnt btn-primary">Editar</button>
          </a>

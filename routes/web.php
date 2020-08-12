@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','IndexController@index');
-Route::resource('/filmes','IndexController');
-//Route::get('/filmes','FilmesController@index');
-//Route::get('/diretores','DiretoresController@index');
+Route::resource('/filmes','FilmesController');
+Route::resource('/diretores','DiretoresController');
    

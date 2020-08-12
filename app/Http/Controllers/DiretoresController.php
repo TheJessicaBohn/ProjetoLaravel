@@ -3,9 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Diretores;
+use App\Models\Filmes;
 
 class DiretoresController extends Controller
 {
+    private $objDiretores;
+    private $objFilmes;
+    public function __construct()
+    {
+        $this->objDiretores= new Diretores();
+        $this->objFilmes= new Filmes();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -45,7 +54,8 @@ class DiretoresController extends Controller
      */
     public function show($id)
     {
-        //
+        $diretor=$this->objDiretores->find($id);
+        return view('diretores',compact('diretor'));
     }
 
     /**
