@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers;
 use App\Models\Diretores;
 use App\Models\Filmes;
 
@@ -48,12 +49,13 @@ class FilmesController extends Controller
             'title'=>request('title'),
             'id_diretor'=>request('id_diretor'),
             'duracao'=>request('duracao'),
-            'pais'=>request('pais'),
+            'origem'=>request('origem'),
             'ano'=>request('ano'),
             ];
-        Filmes::create($cad);
+         
+            Filmes::create($cad);
         if ($cad) {
-           return redirect('filmes');
+            return redirect('/');
         }
     }
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Filmes extends Model
 {
     protected $table = 'filmes';
-    protected $fillable = [ 'title','id_diretor','duracao','pais','ano'];
+    protected $fillable = [ 'title','id_diretor','duracao','origem','ano'];
     public function relDiretores()
     {
         return $this->hasOne('App\Models\Diretores','id','id_diretor');
