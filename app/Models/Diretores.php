@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Diretores extends Model
 {
     protected $table = 'diretores';
-    //protected $fillable = [ 'title','id_diretor','duracao','origem','ano'];
+    protected $fillable = ['name','pais','ano'];
     
     public function relFilmes()
     {

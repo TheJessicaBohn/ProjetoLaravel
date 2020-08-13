@@ -16,5 +16,11 @@ Ano:{{$filme->ano}} <br>
 Criado em:{{$filme->created_at}} <br>
 Mudado em:{{$filme->updated_at}} <br>
 
+      <div class="text-center">
+
+        <a href="{{url("filmes/$filme->id")}}">
+            <button class="bnt btn-primary">Editar</button>
+         </a>
+         </div>
 </div>
 @endsection

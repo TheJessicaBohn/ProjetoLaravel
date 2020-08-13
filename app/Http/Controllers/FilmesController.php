@@ -1,11 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers;
+use Illuminate\Http\Request\FilmeRequest;
 use App\Models\Diretores;
 use App\Models\Filmes;
-
-use Illuminate\Http\Request;
 
 class FilmesController extends Controller
 {
@@ -34,7 +32,7 @@ class FilmesController extends Controller
     public function create()
     {
         $diretores=$this->objDiretores->all();
-        return view('create',compact('diretores'));
+        return view('createFilmes',compact('diretores'));
     }
 
     /**
@@ -43,7 +41,7 @@ class FilmesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FilmeRequest $request)
     {
         $cad= [
             'title'=>request('title'),
@@ -89,7 +87,7 @@ class FilmesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FilmeRequest $request, $id)
     {
         //
     }

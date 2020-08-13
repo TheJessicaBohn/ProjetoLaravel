@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','IndexController@index');
 Route::resource('/filmes','FilmesController');
 Route::resource('/diretores','DiretoresController');
+Route::get('/createFilmes','FilmesController@create');
+Route::get('/createDiretores','DiretoresController@create');
    

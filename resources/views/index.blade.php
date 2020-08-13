@@ -4,8 +4,12 @@
 <div class="content">
 <div class="title m-b-md">SoiticFlix</div>
 <div class="text-center mt-3 mb-4" ></div>
-   <a href="{{url('filmes/create')}}">
-      <button class="btn btn-success">Cadastrar</button>
+   <a href="{{url('createFilmes')}}">
+      <button class="btn btn-success">Cadastrar Filmes</button>
+   </a>
+   <div class="text-center mt-3 mb-4" ></div>
+   <a href="{{url('createDiretores')}}">
+      <button class="btn btn-success">Cadastrar Diretores</button>
    </a> <hr>
 <div class="col-8 m-auto" >
 <table class="table text-center">
@@ -40,9 +44,6 @@
          <a href=" {{url("diretores/$diretores->id")}}">
             <button class="bnt btn-dark">Diretor</button>
          </a> <hr>
-         <a href="">
-            <button class="bnt btn-primary">Editar</button>
-         </a>
          <a href="">
             <button class="bnt btn-danger">Excluir</button>
          </a>

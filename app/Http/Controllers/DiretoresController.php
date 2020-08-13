@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use Illuminate\Http\Request\DiretorRequest;
 use App\Models\Diretores;
 use App\Models\Filmes;
 
@@ -32,7 +31,8 @@ class DiretoresController extends Controller
      */
     public function create()
     {
-        //
+        $diretores=$this->objDiretores->all();
+        return view('createDiretores',compact('diretores'));
     }
 
     /**
@@ -41,9 +41,18 @@ class DiretoresController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DiretorRequest $request)
     {
-        //
+        $cad= [
+        'name'=>request('name'),
+        'pais'=>request('pais'),
+        'ano'=>request('ano'),
+        ];
+        //dd($cad);
+        Diretores::create($cad);
+    if ($cad) {
+        return redirect('/');
+    }
     }
 
     /**
@@ -76,7 +85,7 @@ class DiretoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DiretorRequest $request, $id)
     {
         //
     }
